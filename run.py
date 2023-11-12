@@ -50,3 +50,5 @@ username = input("Please type in your username here: ")
 for move in range(10):
     print("move", move + 1)
     show_boards()
+    user_guess_row = int(input("Select row between o and 4: "))
+    user_guess_col = int(input("Select column between 0 and 4: "))
