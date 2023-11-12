@@ -30,7 +30,7 @@ def rand_row_point(board):
 
 
 def rand_col_point(board):
-    return random.randint(0, len(board[0]) -1)
+    return random.randint(0, len(board[0]) - 1)
 
 
 # Placing ships at random loactions at user and computer boards
@@ -57,7 +57,11 @@ for move in range(10):
     if user_guess_row not in range(5) or user_guess_col not in range(5):
         print("Sorry, that is out of Ocean")
         continue
-    elif computer_board[user_guess_row][user_guess_col] == "H" or computer_board[user_guess_row][user_guess_col] == "M":
+    elif (
+        computer_board[user_guess_row][user_guess_col] == "H"
+        or computer_board[user_guess_row][user_guess_col] == "M"
+    ):
         print("You have already guessed that one")
         continue
     elif user_guess_row == computer_ship_row and user_guess_col == computer_ship_col:
+        print(f"Congrats, you hit computer's ship.")
