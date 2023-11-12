@@ -42,3 +42,6 @@ computer_ship_col = rand_col_point(computer_board)
 
 # Wellcome message
 print("Wellcome to Battleship game")
+
+# Asking for username
+username = input("Please type in your username here: ")
