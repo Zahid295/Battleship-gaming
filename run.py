@@ -49,3 +49,4 @@ username = input("Please type in your username here: ")
 # Create game loop
 for move in range(10):
     print("move", move + 1)
+    show_boards()
