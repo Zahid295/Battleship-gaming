@@ -21,3 +21,11 @@ def show_boards():
     print("Computer board is shown below;")
     for row in computer_board:
         print(" ".join(row))
+
+
+# Create function for randomly placing ships on boards
+def rand_row_point(board):
+    return random.randint(0, len(board) - 1)
+
+def rand_col_point(board):
+    return random.randint(0, len(board[0]) -1)
