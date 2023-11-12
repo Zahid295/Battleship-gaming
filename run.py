@@ -60,3 +60,4 @@ for move in range(10):
     elif computer_board[user_guess_row][user_guess_col] == "H" or computer_board[user_guess_row][user_guess_col] == "M":
         print("You have already guessed that one")
         continue
+    elif user_guess_row == computer_ship_row and user_guess_col == computer_ship_col:
