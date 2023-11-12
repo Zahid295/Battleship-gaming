@@ -53,7 +53,10 @@ for move in range(10):
     user_guess_row = int(input("Select row between o and 4: "))
     user_guess_col = int(input("Select column between 0 and 4: "))
 
- # User move
+    # User move
     if user_guess_row not in range(5) or user_guess_col not in range(5):
         print("Sorry, that is out of Ocean")
+        continue
+    elif computer_board[user_guess_row][user_guess_col] == "H" or computer_board[user_guess_row][user_guess_col] == "M":
+        print("You have already guessed that one")
         continue
