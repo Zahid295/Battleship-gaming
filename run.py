@@ -52,3 +52,8 @@ for move in range(10):
     show_boards()
     user_guess_row = int(input("Select row between o and 4: "))
     user_guess_col = int(input("Select column between 0 and 4: "))
+
+ # User move
+    if user_guess_row not in range(5) or user_guess_col not in range(5):
+        print("Sorry, that is out of Ocean")
+        continue
