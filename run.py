@@ -29,3 +29,7 @@ def rand_row_point(board):
 
 def rand_col_point(board):
     return random.randint(0, len(board[0]) -1)
+
+# Placing ships at random loactions at user and computer boards
+player_ship_row = rand_row_point(player_board)
+player_ship_col = rand_col_point(player_board)
