@@ -10,6 +10,7 @@ for i in range(5):
     player_board.append(["*"] * 5)
     computer_board.append(["*"] * 5)
 
+
 # Create function to print the boards
 def show_boards():
     """
@@ -27,9 +28,17 @@ def show_boards():
 def rand_row_point(board):
     return random.randint(0, len(board) - 1)
 
+
 def rand_col_point(board):
     return random.randint(0, len(board[0]) -1)
+
 
 # Placing ships at random loactions at user and computer boards
 player_ship_row = rand_row_point(player_board)
 player_ship_col = rand_col_point(player_board)
+
+computer_ship_row = rand_row_point(computer_board)
+computer_ship_col = rand_col_point(computer_board)
+
+# Wellcome message
+print("Wellcome to Battleship game")
