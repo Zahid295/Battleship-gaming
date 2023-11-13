@@ -70,6 +70,9 @@ for move in range(10):
         print(f"Sorry, {username}. You missed computer's ship")
         computer_board[user_guess_row][user_guess_col] = "M"
     
-     # Computer move
+    # Computer move
     computer_guess_row = random.randint(0, 4)
     computer_guess_col = random.randint(0, 4)
+    if player_board[computer_guess_row][computer_guess_col] == "H" or player_board[computer_guess_row][computer_guess_col] == "M":
+        print("Computer has already guessed that one")
+        continue
