@@ -12,7 +12,7 @@ for i in range(5):
 
 
 # Create function to print the boards
-def show_boards():
+def show_ocean():
     """
     This function will print User and Computer Boards
     """
@@ -25,20 +25,19 @@ def show_boards():
 
 
 # Create function for randomly placing ships on boards
-def rand_row_point(board):
-    return random.randint(0, len(board) - 1)
-
-
-def rand_col_point(board):
-    return random.randint(0, len(board[0]) - 1)
+def locate_ship(ocean):
+    direction = random.choice(["horizonatl", "vertical"])
+    if direction == "horizontal":
+        row_point = random.randint(0, len(ocean)-1)
+        col_point = random.randint(0, len(ocean[0]-3))
+    else:
+        row_point = random.randint(0, len(ocean)-3)
+        col_point = random.randint(0, len(ocean[0])-1)
 
 
 # Placing ships at random loactions at user and computer boards
-player_ship_row = rand_row_point(user_ocean)
-player_ship_col = rand_col_point(user_ocean)
-
-comp_ship_row = rand_row_point(comp_ocean)
-comp_ship_col = rand_col_point(comp_ocean)
+locate_ship(user_ocean)
+locate_ship(comp_ocean)        
 
 # Wellcome message
 print("Wellcome to Battleship game")
@@ -49,9 +48,9 @@ username = input("Please type in your username here: ")
 # Create game loop
 for move in range(10):
     print("move", move + 1)
-    show_boards()
-    user_guess_row = int(input("Select row between o and 4: "))
-    user_guess_col = int(input("Select column between 0 and 4: "))
+    show_ocean()
+    user_guess_row = int(input("Select row between 1 and 5: ")) - 1
+    user_guess_col = int(input("Select column between 1 and 5: ")) - 1
 
     # User move
     if user_guess_row not in range(5) or user_guess_col not in range(5):
