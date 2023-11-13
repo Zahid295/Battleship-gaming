@@ -83,3 +83,6 @@ for move in range(10):
     else:
         print("Computer missed player Battleship")
         player_board[computer_guess_row][computer_guess_col] ="M"
+
+    if move == 9:
+        print("Game is over")
