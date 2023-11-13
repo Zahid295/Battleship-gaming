@@ -3,12 +3,12 @@ import random
 
 
 # Create 5x5 user and computer boards
-player_board = []
-computer_board = []
+user_ocean = []
+comp_ocean = []
 # Loop to create two game boards
 for i in range(5):
-    player_board.append(["*"] * 5)
-    computer_board.append(["*"] * 5)
+    user_ocean.append(["*"] * 5)
+    comp_ocean.append(["*"] * 5)
 
 
 # Create function to print the boards
@@ -17,10 +17,10 @@ def show_boards():
     This function will print User and Computer Boards
     """
     print("User board is shown below;")
-    for row in player_board:
+    for row in user_ocean:
         print(" ".join(row))
     print("Computer board is shown below;")
-    for row in computer_board:
+    for row in comp_ocean:
         print(" ".join(row))
 
 
@@ -34,11 +34,11 @@ def rand_col_point(board):
 
 
 # Placing ships at random loactions at user and computer boards
-player_ship_row = rand_row_point(player_board)
-player_ship_col = rand_col_point(player_board)
+player_ship_row = rand_row_point(user_ocean)
+player_ship_col = rand_col_point(user_ocean)
 
-computer_ship_row = rand_row_point(computer_board)
-computer_ship_col = rand_col_point(computer_board)
+comp_ship_row = rand_row_point(comp_ocean)
+comp_ship_col = rand_col_point(comp_ocean)
 
 # Wellcome message
 print("Wellcome to Battleship game")
@@ -58,31 +58,36 @@ for move in range(10):
         print("Sorry, that is out of Ocean")
         continue
     elif (
-        computer_board[user_guess_row][user_guess_col] == "H"
-        or computer_board[user_guess_row][user_guess_col] == "M"
+        comp_ocean[user_guess_row][user_guess_col] == "H"
+        or comp_ocean[user_guess_row][user_guess_col] == "M"
     ):
         print("You have already guessed that one")
         continue
-    elif user_guess_row == computer_ship_row and user_guess_col == computer_ship_col:
-        print(f"Congrats, you hit computer's ship.")
-        computer_board[user_guess_row][user_guess_col] = "H"
+    elif user_guess_row == comp_ship_row and user_guess_col == comp_ship_col:
+        print(f"Congrats, you hit computer's Battleship.")
+        comp_ocean[user_guess_row][user_guess_col] = "H"
     else:
-        print(f"Sorry, {username}. You missed computer's ship")
-        computer_board[user_guess_row][user_guess_col] = "M"
-    
+        print(f"Sorry, {username}. You missed computer's Battleship")
+        comp_ocean[user_guess_row][user_guess_col] = "M"
+
     # Computer move
-    computer_guess_row = random.randint(0, 4)
-    computer_guess_col = random.randint(0, 4)
-    if player_board[computer_guess_row][computer_guess_col] == "H" or player_board[computer_guess_row][computer_guess_col] == "M":
+    comp_guess_row = random.randint(0, 4)
+    comp_guess_col = random.randint(0, 4)
+    if (
+        user_ocean[comp_guess_row][comp_guess_col] == "H"
+        or user_ocean[comp_guess_row][comp_guess_col] == "M"
+    ):
         print("Computer has already guessed that one")
         continue
-    elif computer_guess_row == player_ship_row and computer_guess_col == player_ship_col:
+    elif (
+        comp_guess_row == player_ship_row and comp_guess_col == player_ship_col
+    ):
         print("Computer hit player Battleship")
-        player_board[computer_guess_row][computer_guess_col] = "H"
+        user_ocean[comp_guess_row][comp_guess_col] = "H"
         break
     else:
         print("Computer missed player Battleship")
-        player_board[computer_guess_row][computer_guess_col] ="M"
+        user_ocean[comp_guess_row][comp_guess_col] = "M"
 
     if move == 9:
         print("Game is over")
