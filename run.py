@@ -30,9 +30,13 @@ def locate_ship(ocean):
     if direction == "horizontal":
         row_point = random.randint(0, len(ocean)-1)
         col_point = random.randint(0, len(ocean[0]-3))
+        for x in range(3):
+            ocean[row][col + x] = "S"
     else:
         row_point = random.randint(0, len(ocean)-3)
         col_point = random.randint(0, len(ocean[0])-1)
+        for x in range(3):
+            ocean[row + x][col] = "S"
 
 
 # Placing ships at random loactions at user and computer boards
