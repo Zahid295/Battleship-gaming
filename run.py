@@ -82,11 +82,11 @@ for move in range(10):
     elif (
         comp_guess_row == player_ship_row and comp_guess_col == player_ship_col
     ):
-        print("Computer hit player Battleship")
+        print("Computer hit player's Battleship")
         user_ocean[comp_guess_row][comp_guess_col] = "H"
         break
     else:
-        print("Computer missed player Battleship")
+        print("Computer missed player's Battleship")
         user_ocean[comp_guess_row][comp_guess_col] = "M"
 
     if move == 9:
