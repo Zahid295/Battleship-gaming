@@ -67,7 +67,7 @@ for move in range(10):
         print(f"Congrats, you hit computer's Battleship.")
         comp_ocean[user_guess_row][user_guess_col] = "H"
     else:
-        print(f"Sorry, {username}. You missed computer's Battleship")
+        print(f"{username} missed computer's Battleship")
         comp_ocean[user_guess_row][user_guess_col] = "M"
 
     # Computer move
