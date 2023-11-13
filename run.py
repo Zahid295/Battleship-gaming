@@ -76,3 +76,7 @@ for move in range(10):
     if player_board[computer_guess_row][computer_guess_col] == "H" or player_board[computer_guess_row][computer_guess_col] == "M":
         print("Computer has already guessed that one")
         continue
+    elif computer_guess_row == player_ship_row and computer_guess_col == player_ship_col:
+        print("Computer hit player Battleship")
+        player_board[computer_guess_row][computer_guess_col] = "H"
+        break
