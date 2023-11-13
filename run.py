@@ -80,3 +80,6 @@ for move in range(10):
         print("Computer hit player Battleship")
         player_board[computer_guess_row][computer_guess_col] = "H"
         break
+    else:
+        print("Computer missed player Battleship")
+        player_board[computer_guess_row][computer_guess_col] ="M"
