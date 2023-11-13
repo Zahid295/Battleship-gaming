@@ -69,3 +69,7 @@ for move in range(10):
     else:
         print(f"Sorry, {username}. You missed computer's ship")
         computer_board[user_guess_row][user_guess_col] = "M"
+    
+     # Computer move
+    computer_guess_row = random.randint(0, 4)
+    computer_guess_col = random.randint(0, 4)
