@@ -66,3 +66,6 @@ for move in range(10):
     elif user_guess_row == computer_ship_row and user_guess_col == computer_ship_col:
         print(f"Congrats, you hit computer's ship.")
         computer_board[user_guess_row][user_guess_col] = "H"
+    else:
+        print(f"Sorry, {username}. You missed computer's ship")
+        computer_board[user_guess_row][user_guess_col] = "M"
