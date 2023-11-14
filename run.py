@@ -28,20 +28,20 @@ def show_ocean():
 def locate_ship(ocean):
     direction = random.choice(["horizonatl", "vertical"])
     if direction == "horizontal":
-        row_point = random.randint(0, len(ocean)-1)
-        col_point = random.randint(0, len(ocean[0]-3))
+        row_point = random.randint(0, len(ocean) - 1)
+        col_point = random.randint(0, len(ocean[0] - 3))
         for x in range(3):
-            ocean[row][col + x] = "S"
+            ocean[row_point][col_point + x] = "S"
     else:
-        row_point = random.randint(0, len(ocean)-3)
-        col_point = random.randint(0, len(ocean[0])-1)
+        row_point = random.randint(0, len(ocean) - 3)
+        col_point = random.randint(0, len(ocean[0]) - 1)
         for x in range(3):
-            ocean[row + x][col] = "S"
+            ocean[row_point + x][col_point] = "S"
 
 
 # Placing ships at random loactions at user and computer boards
 locate_ship(user_ocean)
-locate_ship(comp_ocean)        
+locate_ship(comp_ocean)
 
 # Wellcome message
 print("Wellcome to Battleship game")
@@ -66,7 +66,7 @@ for move in range(10):
     ):
         print("You have already guessed that one")
         continue
-    elif user_guess_row == comp_ship_row and user_guess_col == comp_ship_col:
+    elif comp_ocean[user_guess_row][user_guess_col] == "S":
         print(f"Congrats, you hit computer's Battleship.")
         comp_ocean[user_guess_row][user_guess_col] = "H"
     else:
@@ -82,9 +82,7 @@ for move in range(10):
     ):
         print("Computer has already guessed that one")
         continue
-    elif (
-        comp_guess_row == player_ship_row and comp_guess_col == player_ship_col
-    ):
+    elif user_ocean[comp_guess_row][comp_guess_col] == "S":
         print("Computer hit player's Battleship")
         user_ocean[comp_guess_row][comp_guess_col] = "H"
         break
@@ -94,3 +92,4 @@ for move in range(10):
 
     if move == 9:
         print("Game is over")
+
