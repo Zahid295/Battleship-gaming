@@ -5,6 +5,9 @@ import random
 # Create 5x5 user and computer boards
 user_ocean = []
 comp_ocean = []
+user_battleship = []
+comp_battleship = []
+
 # Loop to create two game boards
 for i in range(5):
     user_ocean.append(["*"] * 5)
