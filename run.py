@@ -75,7 +75,7 @@ for move in range(10):
     ):
         print("You have already guessed that one")
         continue
-    elif comp_ocean[user_guess_row][user_guess_col] == "S":
+    elif comp_battleship[user_guess_row][user_guess_col] == "S":
         print(f"Congrats, you hit computer's Battleship.")
         comp_ocean[user_guess_row][user_guess_col] = "H"
     else:
@@ -91,7 +91,7 @@ for move in range(10):
     ):
         print("Computer has already guessed that one")
         continue
-    elif user_ocean[comp_guess_row][comp_guess_col] == "S":
+    elif user_battleship[comp_guess_row][comp_guess_col] == "S":
         print("Computer hit player's Battleship")
         user_ocean[comp_guess_row][comp_guess_col] = "H"
         break
