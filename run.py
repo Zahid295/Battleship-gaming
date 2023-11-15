@@ -5,6 +5,9 @@ import random
 # Create 5x5 user and computer boards
 user_ocean = []
 comp_ocean = []
+
+
+# Create 5x5 user and computer lists to store random ships
 user_battleship = []
 comp_battleship = []
 
@@ -12,6 +15,9 @@ comp_battleship = []
 for i in range(5):
     user_ocean.append(["*"] * 5)
     comp_ocean.append(["*"] * 5)
+    user_battleship.append(["*"] * 5)
+    comp_battleship.append(["*"] * 5)
+
 
 
 # Create function to print the boards
