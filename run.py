@@ -99,7 +99,16 @@ for move in range(10):
     else:
         print("Computer missed player's Battleship")
         user_ocean[comp_guess_row][comp_guess_col] = "M"
+    if "S" not in (
+        element for sublist in user_battleship for element in sublist
+                  ):
+        print("Computer has won")
+        break
+    elif "S" not in (
+        element for sublist in comp_battleship for element in sublist
+                    ):
+        print(f"Congratulations, {username}! has won")
+        break
 
     if move == 9:
         print("Game is over")
-
