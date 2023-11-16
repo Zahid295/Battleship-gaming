@@ -19,16 +19,15 @@ for i in range(5):
     comp_battleship.append(["*"] * 5)
 
 
-
 # Create function to print the boards
 def show_ocean():
     """
     This function will print User and Computer Boards
     """
-    print("User board is shown below;")
+    print("User ocean is shown below;")
     for row in user_ocean:
         print(" ".join(row))
-    print("Computer board is shown below;")
+    print("Computer ocean is shown below;")
     for row in comp_ocean:
         print(" ".join(row))
 
@@ -49,8 +48,8 @@ def locate_ship(ocean):
 
 
 # Placing ships at random loactions at user and computer boards
-locate_ship(user_ocean)
-locate_ship(comp_ocean)
+locate_ship(user_battleship)
+locate_ship(comp_battleship)
 
 # Wellcome message
 print("Wellcome to Battleship game")
@@ -78,6 +77,7 @@ for move in range(10):
     elif comp_battleship[user_guess_row][user_guess_col] == "S":
         print(f"Congrats, you hit computer's Battleship.")
         comp_ocean[user_guess_row][user_guess_col] = "H"
+        comp_battleship[user_guess_row][user_guess_col] = "H"
     else:
         print(f"{username} missed computer's Battleship")
         comp_ocean[user_guess_row][user_guess_col] = "M"
@@ -94,6 +94,7 @@ for move in range(10):
     elif user_battleship[comp_guess_row][comp_guess_col] == "S":
         print("Computer hit player's Battleship")
         user_ocean[comp_guess_row][comp_guess_col] = "H"
+        user_battleship[comp_guess_row][comp_guess_col] = "H"
         break
     else:
         print("Computer missed player's Battleship")
