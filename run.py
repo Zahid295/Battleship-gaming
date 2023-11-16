@@ -95,7 +95,6 @@ for move in range(10):
         print("Computer hit player's Battleship")
         user_ocean[comp_guess_row][comp_guess_col] = "H"
         user_battleship[comp_guess_row][comp_guess_col] = "H"
-        break
     else:
         print("Computer missed player's Battleship")
         user_ocean[comp_guess_row][comp_guess_col] = "M"
@@ -107,8 +106,10 @@ for move in range(10):
     elif "S" not in (
         element for sublist in comp_battleship for element in sublist
                     ):
+        comp_ocean[user_guess_row][user_guess_col] == "H"
+        show_ocean()
         print(f"Congratulations, {username}! has won")
         break
 
     if move == 9:
-        print("Game is over")
+        print("Moves has ended, it is draw.")
