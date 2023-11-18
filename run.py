@@ -2,6 +2,14 @@
 import random
 
 
+class Play_Battleship:
+    def __int__(self, username):
+        self.username = username
+        self.user_ocean, self.comp_ocean, self.user_battleship, self.comp_battleship = self.create_ships()
+        self.locate_ship(self.user_battleship)
+        self.locate_ship(self.comp_battleship)
+
+
 # Create 5x5 user and computer boards
 user_ocean = []
 comp_ocean = []
