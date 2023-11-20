@@ -54,15 +54,18 @@ def locate_ship(self, ocean):
             ocean[row_point + x][col_point] = "S"
 
 
-# Getting user guess
+# Function for getting user guess
 def set_user_guess(self):
     user_guess_row = int(input("Select row between 1 and 5: ")) - 1
     user_guess_col = int(input("Select column between 1 and 5: ")) - 1
     return user_guess_row, user_guess_col
 
 
-# Handling user's move
+# Function for user's move
 def user_move(self, user_guess_row, user_guess_col):
+    """
+    This function handles user's moves
+    """
     if user_guess_row not in range(5) or user_guess_col not in range(5):
         print("Sorry, that is out of Ocean")
         return False
@@ -77,9 +80,33 @@ def user_move(self, user_guess_row, user_guess_col):
         self.comp_ocean[user_guess_row][user_guess_col] = "H"
         self.comp_battleship[user_guess_row][user_guess_col] = "H"
     else:
-        print(f"{username} missed computer's Battleship")
+        print(f"{self.username}! missed computer's Battleship")
         self.comp_ocean[user_guess_row][user_guess_col] = "M"
         return True
+
+
+# Function for compter's move
+def comp_move(self):
+    """
+    This function handles computer's moves
+    """
+    comp_guess_row = random.randint(0, 4)
+    comp_guess_col = random.randint(0, 4)
+    if (
+        self.user_ocean[comp_guess_row][comp_guess_col] == "H"
+        or self.user_ocean[comp_guess_row][comp_guess_col] == "M"
+    ):
+        print("Computer has already guessed that one")
+        return False
+    elif self.user_battleship[comp_guess_row][comp_guess_col] == "S":
+        print("Computer hit player's Battleship")
+        self.user_ocean[comp_guess_row][comp_guess_col] = "H"
+        self.user_battleship[comp_guess_row][comp_guess_col] = "H"
+    else:
+        print("Computer missed player's Battleship")
+        self.user_ocean[comp_guess_row][comp_guess_col] = "M"
+    return True
+
 
 
 
@@ -88,22 +115,7 @@ for move in range(10):
     print("move", move + 1)
     show_ocean()
 
-    # Computer move
-    comp_guess_row = random.randint(0, 4)
-    comp_guess_col = random.randint(0, 4)
-    if (
-        user_ocean[comp_guess_row][comp_guess_col] == "H"
-        or user_ocean[comp_guess_row][comp_guess_col] == "M"
-    ):
-        print("Computer has already guessed that one")
-        continue
-    elif user_battleship[comp_guess_row][comp_guess_col] == "S":
-        print("Computer hit player's Battleship")
-        user_ocean[comp_guess_row][comp_guess_col] = "H"
-        user_battleship[comp_guess_row][comp_guess_col] = "H"
-    else:
-        print("Computer missed player's Battleship")
-        user_ocean[comp_guess_row][comp_guess_col] = "M"
+   
     if "S" not in (element for sublist in user_battleship for element in sublist):
         print("Computer has won")
         break
