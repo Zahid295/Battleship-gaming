@@ -108,6 +108,23 @@ def comp_move(self):
     return True
 
 
+# Verify if the game has finished
+def verify_game_over(self):
+    """
+    This functions verifies if "S" is not in user battleship board, 
+    it says Computer won or if "S" not in computer battleship board, 
+    it says user has won
+    """
+    if "S" not in (element for sublist in self.user_battleship for element in sublist):
+        print("Computer has won")
+        return True
+    elif "S" not in (element for sublist in comp_battleship for element in sublist):
+        print(f"Congratulations, {username}! has won")
+        return True
+    return False
+
+
+
 
 
 # Create game loop
@@ -115,15 +132,6 @@ for move in range(10):
     print("move", move + 1)
     show_ocean()
 
-   
-    if "S" not in (element for sublist in user_battleship for element in sublist):
-        print("Computer has won")
-        break
-    elif "S" not in (element for sublist in comp_battleship for element in sublist):
-        comp_ocean[user_guess_row][user_guess_col] == "H"
-        show_ocean()
-        print(f"Congratulations, {username}! has won")
-        break
 
     if move == 9:
         print("Moves has ended, it is draw.")
