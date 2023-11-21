@@ -144,3 +144,8 @@ for move in range(10):
         break
 if move == 9:
     print("Moves has ended, it is draw.")
+
+# To start game
+username = input("Please enter your username: ")
+gaming = Play_Battleship(username)
+gaming.start()
