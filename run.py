@@ -111,8 +111,8 @@ def comp_move(self):
 # Verify if the game has finished
 def verify_game_over(self):
     """
-    This functions verifies if "S" is not in user battleship board, 
-    it says Computer won or if "S" not in computer battleship board, 
+    This functions verifies if "S" is not in user battleship board,
+    it says Computer won or if "S" not in computer battleship board,
     it says user has won
     """
     if "S" not in (element for sublist in self.user_battleship for element in sublist):
@@ -124,15 +124,23 @@ def verify_game_over(self):
     return False
 
 
-
+# Start Battleship Game
+def start(self):
+    for move in range(10):
+        print("Move", move + 1)
+        show_ocean()
 
 
 # Create game loop
 for move in range(10):
     print("move", move + 1)
-    show_ocean()
-
-
-    if move == 9:
-        print("Moves has ended, it is draw.")
-
+    self.show_ocean()
+    user_guess_row, user_guess_col = set_user_guess()
+    if not self.user_move(user_guess_row, user_guess_col):
+        continue
+    if not self.comp_move():
+        continue
+    if self.verify_game_over():
+        break
+if move == 9:
+    print("Moves has ended, it is draw.")
