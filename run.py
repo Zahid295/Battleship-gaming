@@ -140,6 +140,7 @@ class Play_Battleship:
 
 
 # To start game
+print("Lets play Battleship Game")
 username = input("Please enter your username: ")
 gaming = Play_Battleship(username)
 gaming.start()
