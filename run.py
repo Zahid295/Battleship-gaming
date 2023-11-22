@@ -131,6 +131,8 @@ class Play_Battleship:
 
     # Start Battleship Game
     def start(self):
+        print(f"{self.comp_to_hit} ships for user to hit")
+        print(f"{self.user_to_hit} ships for computer to hit")
         for move in range(10):
             print("Move", move + 1)
             self.show_ocean()
@@ -138,6 +140,8 @@ class Play_Battleship:
             if not self.user_move(user_guess_row, user_guess_col):
                 continue
             if not self.comp_move():
+                print(f"{self.comp_to_hit} ships for user to hit")
+                print(f"{self.user_to_hit} ships for computer to hit")
                 continue
             if self.verify_game_over():
                 break
