@@ -12,6 +12,8 @@ class Play_Battleship:
             self.user_battleship,
             self.comp_battleship,
         ) = self.create_ships()
+        self.user_to_hit = 3
+        self.comp_to_hit = 3
         self.locate_ship(self.user_battleship)
         self.locate_ship(self.comp_battleship)
 
