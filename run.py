@@ -12,8 +12,10 @@ class Play_Battleship:
             self.user_battleship,
             self.comp_battleship,
         ) = self.create_ships()
+    # variables to keep track of hits done by user and Computer
         self.user_to_hit = 3
         self.comp_to_hit = 3
+    # Functions to place random ships on user and computer ocean
         self.locate_ship(self.user_battleship)
         self.locate_ship(self.comp_battleship)
 
@@ -79,6 +81,7 @@ class Play_Battleship:
             print(f"Congrats, {self.username}! hit computer's Battleship.")
             self.comp_ocean[user_guess_row][user_guess_col] = "H"
             self.comp_battleship[user_guess_row][user_guess_col] = "H"
+            self.comp_to_hit -= 1
         else:
             print(f"{self.username}! missed computer's Battleship")
             self.comp_ocean[user_guess_row][user_guess_col] = "M"
@@ -101,6 +104,7 @@ class Play_Battleship:
             print("Computer hit player's Battleship")
             self.user_ocean[comp_guess_row][comp_guess_col] = "H"
             self.user_battleship[comp_guess_row][comp_guess_col] = "H"
+            self.user_to_hit -= 1
         else:
             print("Computer missed player's Battleship")
             self.user_ocean[comp_guess_row][comp_guess_col] = "M"
