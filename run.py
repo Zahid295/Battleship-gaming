@@ -32,7 +32,7 @@ class Play_Battleship:
 
     # Create function to print oceans
     def show_ocean(self):
-        print("User ocean is shown below;")
+        print(f"{username} ocean is shown below;")
         for row in self.user_ocean:
             print(" ".join(row))
         print("Computer ocean is shown below;")
@@ -141,6 +141,8 @@ class Play_Battleship:
 
 # To start game
 print("Lets play Battleship Game")
+print("M denotes the missed target.")
+print("H denotes the hit target.")
 username = input("Please enter your username: ")
 gaming = Play_Battleship(username)
 gaming.start()
