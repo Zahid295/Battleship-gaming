@@ -82,10 +82,11 @@ class Play_Battleship:
             self.comp_ocean[user_guess_row][user_guess_col] = "H"
             self.comp_battleship[user_guess_row][user_guess_col] = "H"
             self.comp_to_hit -= 1
+            return True
         else:
             print(f"{self.username}! missed computer's Battleship")
             self.comp_ocean[user_guess_row][user_guess_col] = "M"
-            return True
+            return False
 
     # Function for compter's move
     def comp_move(self):
@@ -150,9 +151,9 @@ class Play_Battleship:
 
 
 # To start game
-print("Lets play Battleship Game")
+print("Lets play Battleship Game\n")
 print("M denotes the missed target.")
-print("H denotes the hit target.")
+print("H denotes the hit target.\n")
 username = input("Please enter your username: ")
 gaming = Play_Battleship(username)
 gaming.start()
