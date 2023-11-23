@@ -106,10 +106,11 @@ class Play_Battleship:
             self.user_ocean[comp_guess_row][comp_guess_col] = "H"
             self.user_battleship[comp_guess_row][comp_guess_col] = "H"
             self.user_to_hit -= 1
+            return True
         else:
             print("Computer missed player's Battleship")
             self.user_ocean[comp_guess_row][comp_guess_col] = "M"
-        return True
+        return False
 
     # Verify if the game has finished
     def verify_game_over(self):
