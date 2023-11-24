@@ -139,12 +139,12 @@ class Play_Battleship:
             print("Move", move + 1)
             self.show_ocean()
             user_guess_row, user_guess_col = self.set_user_guess()
-            if not self.user_move(user_guess_row, user_guess_col):
-                continue
-            if not self.comp_move():
-                print(f"{self.comp_to_hit} ships for user to hit")
+            user_targets = self.user_move(user_guess_row, user_guess_col)
+            if user_targets:
                 print(f"{self.user_to_hit} ships for computer to hit")
+            if not user_targets or not self.comp_move():
                 continue
+            print(f"{self.comp_to_hit} ships for user to hit")
             if self.verify_game_over():
                 break
         if move == 9:
