@@ -18,6 +18,8 @@ class Play_Battleship:
     # Functions to place random ships on user and computer ocean
         self.locate_ship(self.user_battleship)
         self.locate_ship(self.comp_battleship)
+        print(f"{self.comp_to_hit} ships for user to hit")
+        print(f"{self.user_to_hit} ships for computer to hit")
 
     # Function to create game oceans
     def create_ships(self):
@@ -78,11 +80,10 @@ class Play_Battleship:
             print("You have already guessed that one")
             return False
         elif self.comp_battleship[user_guess_row][user_guess_col] == "S":
-            print(f"Congrats, {self.username}! hit computer's Battleship.")
+            print(f"Congrats, {self.username} hit computer's Battleship.")
             self.comp_ocean[user_guess_row][user_guess_col] = "H"
             self.comp_battleship[user_guess_row][user_guess_col] = "H"
             self.comp_to_hit -= 1
-            print(f"{self.comp_to_hit} ships for user to hit")
             return True
         else:
             print(f"{self.username}! missed computer's Battleship")
@@ -103,14 +104,13 @@ class Play_Battleship:
             print("Computer has already guessed that one")
             return False
         elif self.user_battleship[comp_guess_row][comp_guess_col] == "S":
-            print("Computer hit player's Battleship")
+            print("Computer hit user's Battleship")
             self.user_ocean[comp_guess_row][comp_guess_col] = "H"
             self.user_battleship[comp_guess_row][comp_guess_col] = "H"
             self.user_to_hit -= 1
-            print(f"{self.user_to_hit} ships for computer to hit")
             return True
         else:
-            print("Computer missed player's Battleship")
+            print("Computer missed user's Battleship")
             self.user_ocean[comp_guess_row][comp_guess_col] = "M"
         return False
 
@@ -129,7 +129,7 @@ class Play_Battleship:
         elif "S" not in (
             element for sublist in self.comp_battleship for element in sublist
         ):
-            print(f"Congratulations, {username}! has won")
+            print(f"Congratulations, {username} has won")
             return True
         return False
 
@@ -141,7 +141,7 @@ class Play_Battleship:
             user_guess_row, user_guess_col = self.set_user_guess()
             self.user_move(user_guess_row, user_guess_col)
             self.comp_move()
-            print(f"{self.comp_to_hit} ships for user to hit")
+            print(f"{self.comp_to_hit} ships for {username} to hit")
             print(f"{self.user_to_hit} ships for computer to hit")
             if self.verify_game_over():
                 break
