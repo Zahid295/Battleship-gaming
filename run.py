@@ -5,6 +5,8 @@ import random
 # Create class for Battleship game
 class Play_Battleship:
     def __init__(self, username):
+        if not username.isalpha():
+            raise ValueError("Please enter english alphabets only.")
         self.username = username
         (
             self.user_ocean,
@@ -61,13 +63,18 @@ class Play_Battleship:
 
     # Function for getting user guess
     def set_user_guess(self):
-        user_guess_row = input("Select row between 1 and 5: ")
-        if user_guess_row.lower() == 'q':
-            return 'q', 'q'
-        user_guess_col = input("Select column between 1 and 5: ")
-        if user_guess_col.lower() == 'q':
-            return 'q', 'q'
-        return int(user_guess_row) - 1, int(user_guess_col) - 1
+        while True:
+            user_guess_row = input("Select row between 1 and 5: ")
+            if user_guess_row.lower() == 'q':
+                return 'q', 'q'
+            user_guess_col = input("Select column between 1 and 5: ")
+            if user_guess_col.lower() == 'q':
+                return 'q', 'q'
+            try:
+                user_guess_row, user_guess_col = int(user_guess_row), int(user_guess_col)
+                return user_guess_row, user_guess_col
+            except ValueError:
+                print("Incorrect input, please enter required number")
 
     # Function for user's move
     def user_move(self, user_guess_row, user_guess_col):
