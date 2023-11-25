@@ -117,18 +117,13 @@ class Play_Battleship:
     # Verify if the game has finished
     def verify_game_over(self):
         """
-        This functions verifies if "S" is not in user battleship board,
-        it says Computer won or if "S" not in computer battleship board,
-        it says user has won
+        This function checks wether the remaining hits for user and computer
+        are zero, if hits are zero for any one, that one wins.
         """
-        if "S" not in (
-            element for sublist in self.user_battleship for element in sublist
-        ):
+        if self.user_to_hit == 0:
             print("Computer has won")
             return True
-        elif "S" not in (
-            element for sublist in self.comp_battleship for element in sublist
-        ):
+        elif self.comp_to_hit == 0:
             print(f"Congratulations, {username} has won")
             return True
         return False
