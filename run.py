@@ -151,8 +151,8 @@ class Play_Battleship:
                 self.comp_to_hit = 3
                 self.locate_ship(self.user_battleship)
                 self.locate_ship(self.comp_battleship)
-                print(f"{self.comp_to_hit} ships for user to hit")
-                print(f"{self.user_to_hit} ships for computer to hit")
+                print(f"{self.comp_to_hit} battleships for {username} to hit")
+                print(f"{self.user_to_hit} battleships for computer to hit")
                 return True
             else:
                 print(
@@ -174,8 +174,8 @@ class Play_Battleship:
                     return
                 self.user_move(user_guess_row, user_guess_col)
                 self.comp_move()
-                print(f"{self.comp_to_hit} ships for {username} to hit")
-                print(f"{self.user_to_hit} ships for computer to hit")
+                print(f"{self.comp_to_hit} battleships for {username} to hit")
+                print(f"{self.user_to_hit} battleships for computer to hit")
                 if self.verify_game_over():
                     game_end = True
                     break
