@@ -61,9 +61,13 @@ class Play_Battleship:
 
     # Function for getting user guess
     def set_user_guess(self):
-        user_guess_row = int(input("Select row between 1 and 5: ")) - 1
-        user_guess_col = int(input("Select column between 1 and 5: ")) - 1
-        return user_guess_row, user_guess_col
+        user_guess_row = input("Select row between 1 and 5: ")
+        if user_guess_row.lower() == 'q':
+            return 'q', 'q'
+        user_guess_col = input("Select column between 1 and 5: ")
+        if user_guess_col.lower() == 'q':
+            return 'q', 'q'
+        return int(user_guess_row) - 1, int(user_guess_col) - 1
 
     # Function for user's move
     def user_move(self, user_guess_row, user_guess_col):
@@ -86,7 +90,7 @@ class Play_Battleship:
             self.comp_to_hit -= 1
             return True
         else:
-            print(f"{self.username}! missed computer's Battleship")
+            print(f"{self.username} missed computer's Battleship")
             self.comp_ocean[user_guess_row][user_guess_col] = "M"
             return False
 
@@ -124,7 +128,7 @@ class Play_Battleship:
             print("Computer has won")
             return True
         elif self.comp_to_hit == 0:
-            print(f"Congratulations, {username} has won")
+            print(f"Congratulations, {username} has Won.")
             return True
         return False
 
@@ -134,7 +138,7 @@ class Play_Battleship:
             start_again = input("Enter 's' to start again or 'q' to quit: ")
             if start_again.lower() == "q":
                 return False
-            elif start_again.lower() == "p":
+            elif start_again.lower() == "s":
                 (
                     self.user_ocean,
                     self.comp_ocean,
@@ -155,18 +159,31 @@ class Play_Battleship:
 
     # Start Battleship Game
     def start(self):
-        for move in range(10):
-            print("Move", move + 1)
-            self.show_ocean()
-            user_guess_row, user_guess_col = self.set_user_guess()
-            self.user_move(user_guess_row, user_guess_col)
-            self.comp_move()
-            print(f"{self.comp_to_hit} ships for {username} to hit")
-            print(f"{self.user_to_hit} ships for computer to hit")
-            if self.verify_game_over():
+        print("Please enter 'q' if you want to quit at any point")
+
+        while True:
+            self.move = 0
+            game_end = False
+            while self.move < 10:
+                print("Move", self.move + 1)
+                self.show_ocean()
+                user_guess_row, user_guess_col = self.set_user_guess()
+                if user_guess_row == 'q' or user_guess_col == 'q':
+                    return
+                self.user_move(user_guess_row, user_guess_col)
+                self.comp_move()
+                print(f"{self.comp_to_hit} ships for {username} to hit")
+                print(f"{self.user_to_hit} ships for computer to hit")
+                if self.verify_game_over():
+                    game_end = True
+                    break
+                self.move += 1
+                if not game_end and self.move == 9:
+                    print("It is a draw, game has Ended")
+
+            # Ask to play again
+            if not self.start_again_or_quit():
                 break
-        if move == 9:
-            print("Moves has ended, it is draw.")
 
 
 # To start game
