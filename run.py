@@ -126,9 +126,11 @@ class Play_Battleship:
         """
         if self.user_to_hit == 0:
             print("Computer has won")
+            print("Game has Ended")
             return True
         elif self.comp_to_hit == 0:
             print(f"Congratulations, {username} has Won.")
+            print("Game has Ended")
             return True
         return False
 
