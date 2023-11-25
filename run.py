@@ -82,6 +82,7 @@ class Play_Battleship:
             self.comp_ocean[user_guess_row][user_guess_col] = "H"
             self.comp_battleship[user_guess_row][user_guess_col] = "H"
             self.comp_to_hit -= 1
+            print(f"{self.comp_to_hit} ships for user to hit")
             return True
         else:
             print(f"{self.username}! missed computer's Battleship")
@@ -106,6 +107,7 @@ class Play_Battleship:
             self.user_ocean[comp_guess_row][comp_guess_col] = "H"
             self.user_battleship[comp_guess_row][comp_guess_col] = "H"
             self.user_to_hit -= 1
+            print(f"{self.user_to_hit} ships for computer to hit")
             return True
         else:
             print("Computer missed player's Battleship")
@@ -141,10 +143,10 @@ class Play_Battleship:
             user_guess_row, user_guess_col = self.set_user_guess()
             user_targets = self.user_move(user_guess_row, user_guess_col)
             if user_targets:
+                print(f"{self.comp_to_hit} ships for user to hit")
+            comp_targets = self.comp_move()
+            if comp_targets:
                 print(f"{self.user_to_hit} ships for computer to hit")
-            if not user_targets or not self.comp_move():
-                continue
-            print(f"{self.comp_to_hit} ships for user to hit")
             if self.verify_game_over():
                 break
         if move == 9:
