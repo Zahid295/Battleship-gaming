@@ -12,10 +12,10 @@ class Play_Battleship:
             self.user_battleship,
             self.comp_battleship,
         ) = self.create_ships()
-    # variables to keep track of hits done by user and Computer
+        # variables to keep track of hits done by user and Computer
         self.user_to_hit = 3
         self.comp_to_hit = 3
-    # Functions to place random ships on user and computer ocean
+        # Functions to place random ships on user and computer ocean
         self.locate_ship(self.user_battleship)
         self.locate_ship(self.comp_battleship)
         print(f"{self.comp_to_hit} ships for user to hit")
@@ -23,12 +23,12 @@ class Play_Battleship:
 
     # Function to create game oceans
     def create_ships(self):
-        (
-            user_ocean,
-            comp_ocean,
-            user_battleship,
-            comp_battleship,
-        ) = [], [], [], []
+        (user_ocean, comp_ocean, user_battleship, comp_battleship,) = (
+            [],
+            [],
+            [],
+            [],
+        )
         for _ in range(5):
             user_ocean.append(["*"] * 5)
             comp_ocean.append(["*"] * 5)
@@ -127,6 +127,31 @@ class Play_Battleship:
             print(f"Congratulations, {username} has won")
             return True
         return False
+
+    # Play again or Quit function
+    def start_again_or_quit(self):
+        while True:
+            start_again = input("Enter 's' to start again or 'q' to quit: ")
+            if start_again.lower() == "q":
+                return False
+            elif start_again.lower() == "p":
+                (
+                    self.user_ocean,
+                    self.comp_ocean,
+                    self.user_battleship,
+                    self.comp_battleship,
+                ) = self.create_ships()
+                self.user_to_hit = 3
+                self.comp_to_hit = 3
+                self.locate_ship(self.user_battleship)
+                self.locate_ship(self.comp_battleship)
+                print(f"{self.comp_to_hit} ships for user to hit")
+                print(f"{self.user_to_hit} ships for computer to hit")
+                return True
+            else:
+                print(
+                    "Incorrect, Please enter 's' to start agaon or 'q' to quit"
+                     )
 
     # Start Battleship Game
     def start(self):
