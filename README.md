@@ -21,7 +21,8 @@ This is an implementation of the classic Battleship game in Python. The game is 
 - The game uses a simple text-based interface that's easy to understand and use.
 - The board is displayed after each turn, allowing players to see the current state of the game.
 # H4 Automatic ship lacement
-- Ships are automatically placed on the board at the start of each game.
+- Game boards for user and computer are automatically generated and shown after entering username.
+- After that, ships are also automatically placed on game boards that are hidden from user 
 - This feature saves time and allows the game to start quickly.
 # H4 Play again option
 - After each game, the user is given the option to play again or quit.
