@@ -4,6 +4,48 @@ import random
 
 # Create class for Battleship game
 class Play_Battleship:
+    """
+    Class to model the Battleship game
+
+    ...
+
+    Attributes
+    ----------
+    username : str
+        the username of the user of game
+    user_ocean : list
+        the game board of user
+    comp_ocean : list
+        the game board
+    user_battleship : list
+        the position of user's ship
+    comp_battleship : list
+        the position of computer's ship
+    user_to_hit : int
+        the ships left for user to hit
+    comp_to_hit : int
+        the ships left for computer to hit
+
+    Methods
+    -------
+    create_ships():
+        Intializes the boards and positions ships
+    locate_ship(battleships):
+        Randomly places ships on user and Computer boards
+    set_user_guess():
+        receives guess from the user
+    user_move(user_guess_row, user_guess_col):
+        Handles user's move
+    comp_move():
+        Handles computer's move
+    verify_game_over():
+        Checks if the game has ended or not
+    start_again_or_quit():
+        Asks user wether they wants to start again game or quit
+    start():
+        Starts the game
+    """
+
     def __init__(self, username):
         if not username.isalpha():
             raise ValueError("Please enter english alphabets only.")
@@ -25,6 +67,9 @@ class Play_Battleship:
 
     # Function to create game oceans
     def create_ships(self):
+        """
+        Initializes boards and ships
+        """
         (user_ocean, comp_ocean, user_battleship, comp_battleship,) = (
             [],
             [],
@@ -49,6 +94,9 @@ class Play_Battleship:
 
     # Create function for randomly placing ships on oceans
     def locate_ship(self, ocean):
+        """
+        Randomly places ships on user and computer boards
+        """
         direction = random.choice(["horizonatl", "vertical"])
         if direction == "horizontal":
             row_point = random.randint(0, len(ocean) - 1)
@@ -63,15 +111,21 @@ class Play_Battleship:
 
     # Function for getting user guess
     def set_user_guess(self):
+        """
+        Receives a guess from user
+        """
         while True:
             user_guess_row = input("Select row between 1 and 5: ")
-            if user_guess_row.lower() == 'q':
-                return 'q', 'q'
+            if user_guess_row.lower() == "q":
+                return "q", "q"
             user_guess_col = input("Select column between 1 and 5: ")
-            if user_guess_col.lower() == 'q':
-                return 'q', 'q'
+            if user_guess_col.lower() == "q":
+                return "q", "q"
             try:
-                user_guess_row, user_guess_col = int(user_guess_row), int(user_guess_col)
+                user_guess_row, user_guess_col = (
+                    int(user_guess_row) - 1,
+                    int(user_guess_col) - 1,
+                )
                 return user_guess_row, user_guess_col
             except ValueError:
                 print("Incorrect input, please enter required number")
@@ -143,6 +197,10 @@ class Play_Battleship:
 
     # Play again or Quit function
     def start_again_or_quit(self):
+        """
+        Asks the user wether they want to start game
+        again or quit
+        """
         while True:
             start_again = input("Enter 's' to start again or 'q' to quit: ")
             if start_again.lower() == "q":
@@ -163,11 +221,14 @@ class Play_Battleship:
                 return True
             else:
                 print(
-                    "Incorrect, Please enter 's' to start agaon or 'q' to quit"
-                     )
+                    "Incorrect, Please enter 's' to start again or 'q' to quit"
+                    )
 
     # Start Battleship Game
     def start(self):
+        """
+        This function starts game
+        """
         print("Please enter 'q' if you want to quit at any point")
 
         while True:
@@ -177,7 +238,7 @@ class Play_Battleship:
                 print("Move", self.move + 1)
                 self.show_ocean()
                 user_guess_row, user_guess_col = self.set_user_guess()
-                if user_guess_row == 'q' or user_guess_col == 'q':
+                if user_guess_row == "q" or user_guess_col == "q":
                     return
                 self.user_move(user_guess_row, user_guess_col)
                 self.comp_move()
@@ -199,6 +260,5 @@ class Play_Battleship:
 print("Lets play Battleship Game\n")
 print("M denotes the missed target.")
 print("H denotes the hit target.\n")
-username = input("Please enter your username: ")
+username = input("Please enter your username:\n")
 gaming = Play_Battleship(username)
-gaming.start()
