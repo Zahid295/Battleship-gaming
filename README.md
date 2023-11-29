@@ -2,6 +2,16 @@
 
 This is an implementation of the classic Battleship game in Python. The game is played on a 5x5 grid, and each player has 3 ships. Players take turns guessing the coordinates of the other player's ships. The first player to sink all of the other player's ships wins the game.
 
+# H2 Rules and Instructions on How to Play game
+
+- Run the script in your Python environment.
+- You will be prompted to enter your username. Please note that the username should only contain English   alphabets.
+- The game will start, and you will be asked to guess the row and column of a ship on the opponent's board. Enter a number between 1 and 5 for both the row and the column.
+- If you want to quit the game at any point, type 'q' when asked for your guess.
+- The game will inform you whether your guess was a hit or a miss. Then, the computer will take its turn.
+- The game continues until all ships of a player are sunk. The player who sinks all ships of the opponent first wins the game.
+- After the game ends, you will be asked if you want to play again. Press 's' to start game again or 'q' to quit.
+
 # H2 Features
 
 # H4 Interactive game
