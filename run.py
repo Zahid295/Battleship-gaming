@@ -47,8 +47,6 @@ class Play_Battleship:
     """
 
     def __init__(self, username):
-        if not username.isalpha():
-            raise ValueError("Please enter english alphabets only.")
         self.username = username
         (
             self.user_ocean,
@@ -260,6 +258,11 @@ class Play_Battleship:
 print("Lets play Battleship Game\n")
 print("M denotes the missed target.")
 print("H denotes the hit target.\n")
-username = input("Please enter your username:\n")
-gaming = Play_Battleship(username)
+while True:
+    username = input("Please enter your username:\n")
+    if username.isalpha():
+        gaming = Play_Battleship(username)
+        break
+    else:
+        print("Please provide alphabets for username.")
 gaming.start()

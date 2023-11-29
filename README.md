@@ -29,4 +29,5 @@ This is an implementation of the classic Battleship game in Python. The game is 
 - This feature allows for continuous play without needing to restart the program.
 # H4 Input validation
 The game checks if the user's input is valid and prompts the user to enter a valid input if it's not.
-This feature ensures that the game runs smoothly without errors due to invalid input.
+- Also, if the user or computer guess the same row and column, the message says already guessed that one.
+- This feature ensures that the game runs smoothly without errors due to invalid input.
