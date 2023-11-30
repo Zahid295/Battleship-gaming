@@ -44,3 +44,11 @@ To test this project manually, I have
 
 # H3 Validation
 To validate the code, I used code institute's (PEP8 python linter)[https://pep8ci.herokuapp.com/].
+
+# H2 Technologies used
+- Python language was used in the creation of this game.
+- The Object oriented programming paradigm was the one I used to complete this Game project. It is made up of classes and methods. These methods are used to carry out the tasks of the desired result.
+- (Github)[https://github.com/] was used for hosting this project's source code.
+- (Codeanywhere)[https://codeanywhere.com/] was used as IDE for the development of this project.
+- (Heroku)[https://www.heroku.com/] was used to deploy this Application.
+- Python Random module is used to generate random numbers in this project.
