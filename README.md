@@ -42,6 +42,10 @@ This is an implementation of the classic Battleship game in Python. The game is 
 ![](../Battleship-gaming/documentation/input_validation_1.png)
 ![](../Battleship-gaming/documentation/input_validation_2.png)
 
+
+## Flow Chart
+![](../Battleship-gaming/documentation/flow_chart.png)
+
 ## Testing
 
 To test this project manually, I have
