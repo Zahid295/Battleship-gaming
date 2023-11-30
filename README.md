@@ -33,3 +33,14 @@ This is an implementation of the classic Battleship game in Python. The game is 
 - Further, if user enters any alphabets instead of integer for guess, message says incorrect input,
  please enter required number.
 - This feature ensures that the game runs smoothly without errors due to invalid input.
+
+# H2 Testing
+
+To test this project manually, I have
+- Checked the lint validation embedded in code institute python essentials template
+- Every issue has been fixed such as 'line too long', 'needs 2 spaces found one' and 'whitespaces'. Game is unaffected by these issue but the code quality is perserved.
+- Inputs were checked by using differenet invalid inputs. For example, empty inputs, numbers out of range and invalid strings.
+- All the code is tested in local and code institute Heroku terminal.
+
+# H3 Validation
+To validate the code, I used code institute's (PEP8 python linter)[https://pep8ci.herokuapp.com/].
