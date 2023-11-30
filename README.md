@@ -27,15 +27,20 @@ This is an implementation of the classic Battleship game in Python. The game is 
 - Game boards for user and computer are automatically generated and shown after entering username.
 - After that, ships are also automatically placed on game boards that are hidden from user. 
 - This feature saves time and allows the game to start quickly.
+![](../Battleship-gaming/documentation/automatic_ship_placement_1.png)
+![](../Battleship-gaming/documentation/automatic_ship_placement_2.png)
 #### Play again option
 - After each game, the user is given the option to play again or quit.
 - This feature allows for continuous play without needing to restart the program.
+![](../Battleship-gaming/documentation/play_again.png)
 #### Input validation
 - The game checks if the user's input is valid and prompts the user to enter a valid input if it's not.
 - Also, if the user or computer guess the same row and column, the message says already guessed that one.
 - Further, if user enters any alphabets instead of integer for guess, message says incorrect input,
  please enter required number.
 - This feature ensures that the game runs smoothly without errors due to invalid input.
+![](../Battleship-gaming/documentation/input_validation_1.png)
+![](../Battleship-gaming/documentation/input_validation_2.png)
 
 ## Testing
 
