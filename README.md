@@ -69,3 +69,22 @@ To validate the code, I used code institute's [PEP8 python linter](https://pep8c
 - pylint warnings regarding trailing white space and space found between any two line have been resolved by correctly formatting the code.
 - During testing the game, a bug was found that at the end of the game loop, when somebody wins or turns ended, there was not any way to smoothly exit the game. So I applied while loop in function 'start again or quit' so that user can choose either to quit the game or play again at the end of game without throughing any error.
 - After that, another bug was found that if someone enters something other than 's' which represents start game again and 'q' which represents quit game, an error was seen so the while statement was used in stat_again_or_quit function to handle this issue.
+
+## Deployement
+Heroku was used to host the project. The following are the steps to implement the project:
+
+- Sign in to Heroku website first.
+- Click "New" to create a new application.
+- I gave my project the name "battleship-gamming," selected "Europe" as my area, and then hit "Create app."
+- Next, choosing the 'Settings' tab.
+- I then click "Reveal Config Vars" after scrolling down to "Config Vars."
+- I typed 'PORT' in the key box and '8000' in the value field.
+- I then continued to scroll down to "Buildpacks" and selected "Add buildpacks."
+- I then selected "Python" and save changes.
+- I chose "nodejs" this time when I selected "Add buildpack," and I then hit "Save changes."
+- I then confirmed that the buildpacks were arranged with "python" at the top and "nodejs" afterwards.
+- Next, choose the 'Deploy' tab.
+- The next step is to choose a "Deployment method." I chose "GitHub," acknowledged that I wanted to connect to GitHub, and enetered my github account.
+- I then looked at "Connect to GitHub" repository name and saw the name I gave the repository: "Battleship-gaming", the press "Search" button and then "Connect".
+- I then scrolling down to "Manual Deploy" and pressed "Deploy Branch".
+- Finally, I got the message "The app was successfully deployed" and  clicked the "View" button.
