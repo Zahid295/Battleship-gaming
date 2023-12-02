@@ -1,13 +1,13 @@
 # Battleship Game
 
 This is an implementation of the classic Battleship game in Python. The game is played on a 5x5 grid, and each player has 3 ships. Players take turns guessing the coordinates of the other player's ships. The first player to sink all of the other player's ships wins the game.
-[To Vist deployed site click here.](https://battleship-gaming-73f3dbc3be56.herokuapp.com/)
+[To Visit deployed site click here.](https://battleship-gaming-73f3dbc3be56.herokuapp.com/)
 
 ![Project view on different size devices](documentation/screenshot.png)
 
 ## User Stories
 ### Site User purpose
-- As a user of the site, i want to play game for fun and to compete.
+- As a user of the site, I want to play game for fun and to compete.
 - As a user of the site, I want the details to be clear so that I can understand what the game is about.
 - As a user of the site, I want to know the rules of the game and be able to choose to replay or quit.
 
