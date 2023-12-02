@@ -17,9 +17,9 @@ This is an implementation of the classic Battleship game in Python. The game is 
 #### Interactive game
 - The game prompts the user for input and responds with whether the guess was a hit or a miss.
 - The user and the computer take turns to play, making the game interactive and engaging.
-![Interaction-photo](documentation/interactive_game_1.png)
-![Interaction-photo](documentation/interactive_game_2.png)
-![Interaction-photo](documentation/interactive_game_3.png)
+![Interaction image](documentation/interactive_game_1.png)
+![Interaction image](documentation/interactive_game_2.png)
+![Interaction image](documentation/interactive_game_3.png)
 #### Intuitive Interface
 - The game uses a simple text-based interface that's easy to understand and use.
 - The board is displayed after each turn, allowing players to see the current state of the game.
@@ -27,24 +27,24 @@ This is an implementation of the classic Battleship game in Python. The game is 
 - Game boards for user and computer are automatically generated and shown after entering username.
 - After that, ships are also automatically placed on game boards that are hidden from user. 
 - This feature saves time and allows the game to start quickly.
-![](../Battleship-gaming/documentation/automatic_ship_placement_1.png)
-![](../Battleship-gaming/documentation/automatic_ship_placement_2.png)
+![Automatic ship placement image](documentation/automatic_ship_placement_1.png)
+![Automatic ship placement image](documentation/automatic_ship_placement_2.png)
 #### Play again option
 - After each game, the user is given the option to play again or quit.
 - This feature allows for continuous play without needing to restart the program.
-![](../Battleship-gaming/documentation/play_again.png)
+![Automatic ship placement image](documentation/play_again.png)
 #### Input validation
 - The game checks if the user's input is valid and prompts the user to enter a valid input if it's not.
 - Also, if the user or computer guess the same row and column, the message says already guessed that one.
 - Further, if user enters any alphabets instead of integer for guess, message says incorrect input,
  please enter required number.
 - This feature ensures that the game runs smoothly without errors due to invalid input.
-![](../Battleship-gaming/documentation/input_validation_1.png)
-![](../Battleship-gaming/documentation/input_validation_2.png)
+![Input validation iamge](documentation/input_validation_1.png)
+![Input validation image](documentation/input_validation_2.png)
 
 
 ## Flow Chart
-![](../Battleship-gaming/documentation/flow_chart.png)
+![Flow chart image](documentation/flow_chart.png)
 
 ## Testing
 
@@ -56,7 +56,7 @@ To test this project manually, I have
 
 ### Validation
 To validate the code, I used code institute's [PEP8 python linter](https://pep8ci.herokuapp.com/).
-![](../Battleship-gaming/documentation/code_validation.png)
+![Code validation image](documentation/code_validation.png)
 ## Technologies used
 - Python language was used in the creation of this game.
 - The Object oriented programming paradigm was the one I used to complete this Game project. It is made up of classes and methods. These methods are used to carry out the tasks of the desired result.
