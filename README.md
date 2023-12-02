@@ -5,6 +5,17 @@ This is an implementation of the classic Battleship game in Python. The game is 
 
 ![Project view on different size devices](documentation/screenshot.png)
 
+## User Stories
+### Site User purpose
+- As a user of the site, i want to play game for fun and to compete.
+- As a user of the site, I want the details to be clear so that I can understand what the game is about.
+- As a user of the site, I want to know the rules of the game and be able to choose to replay or quit.
+
+### Site Owner purpose
+- As the owner of the site, I want to provide details to users that they should know.
+- As the owner of the site, I want my game to be interactive and intuitive.
+- As the owner of the site, I want to show details of rules and how to play to the user during the game.
+
 ## Rules and Instructions on How to Play game
 
 - Run the script in your Python environment.
