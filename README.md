@@ -88,3 +88,8 @@ Heroku was used to host the project. The following are the steps to implement th
 - I then looked at "Connect to GitHub" repository name and saw the name I gave the repository: "Battleship-gaming", the press "Search" button and then "Connect".
 - I then scrolling down to "Manual Deploy" and pressed "Deploy Branch".
 - Finally, I got the message "The app was successfully deployed" and  clicked the "View" button.
+
+## Credits
+-  Diploma in full stack software development ( curriculum course).
+- I used the Python-Essentials-template for students from the Code Institute for this project.
+- Some ideas and knowledge are from [w3schools](https://www.w3schools.com/).
