@@ -56,7 +56,7 @@ To test this project manually, I have
 
 ### Validation
 To validate the code, I used code institute's [PEP8 python linter](https://pep8ci.herokuapp.com/).
-
+![](../Battleship-gaming/documentation/code_validation.png)
 ## Technologies used
 - Python language was used in the creation of this game.
 - The Object oriented programming paradigm was the one I used to complete this Game project. It is made up of classes and methods. These methods are used to carry out the tasks of the desired result.
@@ -64,3 +64,8 @@ To validate the code, I used code institute's [PEP8 python linter](https://pep8c
 - [Codeanywhere](https://codeanywhere.com/) was used as IDE for the development of this project.
 - [Heroku](https://www.heroku.com/) was used to deploy this Application.
 - Python Random module is used to generate random numbers in this project.
+
+## Bugs
+- pylint warnings regarding trailing white space and space found between any two line have been resolved by correctly formatting the code.
+- During testing the game, a bug was found that at the end of the game loop, when somebody wins or turns ended, there was not any way to smoothly exit the game. So I applied while loop in function 'start again or quit' so that user can choose either to quit the game or play again at the end of game without throughing any error.
+- After that, another bug was found that if someone enters something other than 's' which represents start game again and 'q' which represents quit game, an error was seen so the while statement was used in stat_again_or_quit function to handle this issue.
