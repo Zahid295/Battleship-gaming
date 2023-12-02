@@ -17,9 +17,9 @@ This is an implementation of the classic Battleship game in Python. The game is 
 #### Interactive game
 - The game prompts the user for input and responds with whether the guess was a hit or a miss.
 - The user and the computer take turns to play, making the game interactive and engaging.
-![](../Battleship-gaming/documentation/interactive_game_1.png)
-![](../Battleship-gaming/documentation/interactive_game_2.png)
-![](../Battleship-gaming/documentation/interactive_game_3.png)
+![Interaction-photo](documentation/interactive_game_1.png)
+![Interaction-photo](documentation/interactive_game_2.png)
+![Interaction-photo](documentation/interactive_game_3.png)
 #### Intuitive Interface
 - The game uses a simple text-based interface that's easy to understand and use.
 - The board is displayed after each turn, allowing players to see the current state of the game.
